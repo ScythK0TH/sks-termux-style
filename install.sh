@@ -44,7 +44,7 @@ echo "=========================================="
 echo " Setting up Oh My Posh theme..."
 echo "=========================================="
 mkdir -p ~/.poshthemes
-wget -q https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/catppuccin_mocha.omp.json -O ~/.poshthemes/catppuccin_mocha.omp.json
+wget -q https://raw.githubusercontent.com/ScythK0TH/sks-termux-style/refs/heads/main/hul10-mocha.omp.json -O ~/.poshthemes/hul10-mocha.omp.json
 
 # Install Zsh plugins
 echo ""
@@ -70,7 +70,7 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # ========== OH MY POSH ==========
-eval "$(oh-my-posh init zsh --config ~/.poshthemes/catppuccin_mocha.omp.json)"
+eval "$(oh-my-posh init zsh --config ~/.poshthemes/hul10-mocha.omp.json)"
 
 # ========== HISTORY ==========
 HISTFILE=~/.zsh_history
