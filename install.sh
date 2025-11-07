@@ -8,6 +8,7 @@ echo "=========================================="
 echo " Installing Zsh, Git, Oh My Posh, and Wget..."
 echo "=========================================="
 pkg update -y
+pkg upgrade -y
 pkg install zsh git oh-my-posh wget -y
 
 echo ""
