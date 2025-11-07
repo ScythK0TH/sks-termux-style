@@ -1,0 +1,154 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "palette": {
+    "rosewater": "#f5e0dc",
+    "flamingo": "#f2cdcd",
+    "pink": "#f5c2e7",
+    "mauve": "#cba6f7",
+    "red": "#f38ba8",
+    "maroon": "#eba0ac",
+    "peach": "#fab387",
+    "yellow": "#f9e2af",
+    "green": "#a6e3a1",
+    "teal": "#94e2d5",
+    "sky": "#89dceb",
+    "sapphire": "#74c7ec",
+    "blue": "#89b4fa",
+    "lavender": "#b4befe",
+    "text": "#cdd6f4",
+    "subtext1": "#bac2de",
+    "subtext0": "#a6adc8",
+    "overlay2": "#9399b2",
+    "overlay1": "#7f849c",
+    "overlay0": "#6c7086",
+    "surface2": "#585b70",
+    "surface1": "#45475a",
+    "surface0": "#313244",
+    "base": "#1e1e2e",
+    "mantle": "#181825",
+    "crust": "#11111b"
+  },
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "background": "transparent",
+          "foreground": "p:text",
+          "style": "plain",
+          "template": "\u250c",
+          "type": "text"
+        },
+        {
+          "background": "p:surface0",
+          "foreground": "p:blue",
+          "properties": {
+            "windows": "\ue62a",
+            "linux": "\uf17c",
+            "ubuntu": "\uf31b",
+            "macos": "\uf179"
+          },
+          "style": "plain",
+          "template": " {{.Icon}}{{if .WSL}} (WSL){{end}}\u2800",
+          "type": "os"
+        },
+        {
+          "background": "p:lavender",
+          "foreground": "p:crust",
+          "style": "plain",
+          "template": " \uf489 {{.Name}}\u2800",
+          "type": "shell"
+        },
+        {
+          "background": "p:mauve",
+          "foreground": "p:crust",
+          "style": "plain",
+          "template": " \uf2c0 {{.HostName}}\ue0bd{{.UserName}}\u2800",
+          "type": "session"
+        },
+        {
+          "background": "p:yellow",
+          "foreground": "p:crust",
+          "properties": {
+            "branch_icon": " \ue0a0 "
+          },
+          "style": "plain",
+          "template": "{{.HEAD}}\u2800",
+          "type": "git"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "background": "transparent",
+          "foreground": "p:teal",
+          "properties": {
+            "style": "austin",
+            "threshold": 0
+          },
+          "style": "plain",
+          "template": "{{.FormattedMs}}",
+          "type": "executiontime"
+        },
+        {
+          "background": "transparent",
+          "foreground": "p:subtext1",
+          "properties": {
+            "time_format": "02/01/06 15:04"
+          },
+          "style": "plain",
+          "template": "<p:subtext1> · </>{{.CurrentDate | date .Format}}",
+          "type": "time"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "background": "transparent",
+          "foreground": "p:text",
+          "properties": {
+            "folder_icon": "\uf07b",
+            "folder_separator_template": "<p:blue> \u00bb </>",
+            "home_icon": "\ueb06",
+            "style": "agnoster"
+          },
+          "style": "plain",
+          "template": "<p:text>\u2514</><p:blue>[</> {{.Path}} <p:blue>]</>",
+          "type": "path"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "background": "transparent",
+          "foreground": "p:green",
+          "foreground_templates": [
+            "{{if gt .Code 0}}p:red{{end}}"
+          ],
+          "properties": {
+            "always_enabled": true
+          },
+          "style": "plain",
+          "template": "\u276f",
+          "type": "status"
+        }
+      ]
+    }
+  ],
+  "console_title_template": "{{if .Root}}[root] {{end}}{{.Shell}} in <{{.Folder}}>",
+  "final_space": true,
+  "version": 3
+}
